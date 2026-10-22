@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KrishiSetu | Farmer Marketplace</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#"><span class="brand-icon">🌾</span><span>KrishiSetu<small>FARMERS • BUYERS • FAIR PRICES</small></span></a>
+    <nav><a href="#dashboard">Dashboard</a><a href="#marketplace">Marketplace</a><a href="#how">How it works</a></nav>
+    <button id="langBtn" class="outline-btn" type="button">ಕನ್ನಡ / EN</button>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <span class="eyebrow">DIRECT MARKET ACCESS FOR FARMERS</span>
+        <h1 id="heroTitle">Your harvest.<br><em>Your price.</em><br>Your market.</h1>
+        <p id="heroText">Connect directly with buyers, compare market prices, and make more informed selling decisions.</p>
+        <div class="hero-actions"><a class="primary-btn" href="#marketplace">Explore marketplace <span>↗</span></a><a class="text-link" href="#addListing">+ List your produce</a></div>
+        <div class="hero-stats"><div><strong>0%</strong><span>Platform commission*</span></div><div><strong>5</strong><span>Anchor crops</span></div><div><strong>1</strong><span>Shared marketplace</span></div></div>
+      </div>
+      <div class="hero-visual">
+        <div class="sun"></div><div class="field field-one"></div><div class="field field-two"></div><div class="field field-three"></div>
+        <div class="floating-card price-card"><span class="tiny-label">ARECANUT · SAMPLE PRICE</span><div class="price-row"><strong>₹46,000</strong><span class="pill fair">FAIR PRICE</span></div><p>Reference: ₹46,200 / quintal</p><div class="mini-bar"><span></span></div><small>FPI 0.996 · Illustrative data</small></div>
+        <div class="floating-card buyer-card"><span class="buyer-avatar">✓</span><div><strong>Direct buyer connection</strong><small>Less dependence on intermediaries</small></div></div>
+        <div class="leaf leaf-a">✦</div><div class="leaf leaf-b">✦</div>
+      </div>
+    </section>
+
+    <section class="section" id="dashboard">
+      <div class="section-heading"><div><span class="eyebrow">AT A GLANCE</span><h2>Farmer dashboard</h2></div><span class="demo-tag">DEMO PROTOTYPE</span></div>
+      <div class="stats-grid">
+        <article class="stat-card"><span class="stat-icon">🌱</span><span class="stat-label">Active listings</span><strong id="activeCount">5</strong><small>Produce available to buyers</small></article>
+        <article class="stat-card"><span class="stat-icon">🤝</span><span class="stat-label">Offers received</span><strong id="offerCount">2</strong><small>Sample offer activity</small></article>
+        <article class="stat-card"><span class="stat-icon">📈</span><span class="stat-label">Price checks</span><strong id="priceCount">5</strong><small>Listings with an FPI estimate</small></article>
+        <article class="stat-card highlight-stat"><span class="stat-icon">🌾</span><span class="stat-label">Built for local farmers</span><strong>DK + Udupi</strong><small>Kannada-first design concept</small></article>
+      </div>
+    </section>
+
+    <section class="section marketplace-section" id="marketplace">
+      <div class="section-heading"><div><span class="eyebrow">FRESH FROM THE FARM</span><h2>Explore the marketplace</h2><p>Browse sample produce listings and send an offer.</p></div><button class="primary-btn" type="button" onclick="document.getElementById('addListing').scrollIntoView({behavior:'smooth'})">+ Add produce</button></div>
+      <div class="market-tools"><label class="search-box">⌕ <input id="searchInput" type="search" placeholder="Search crop or location..."></label><select id="cropFilter" aria-label="Filter by crop"><option value="">All crops</option><option>Arecanut</option><option>Coconut</option><option>Paddy</option><option>Cashew</option><option>Pepper</option></select><select id="locationFilter" aria-label="Filter by location"><option value="">All locations</option><option>Udupi</option><option>DK</option><option>Karkala</option><option>Kundapura</option></select></div>
+      <div id="listingGrid" class="listing-grid"></div>
+      <p id="emptyState" class="empty-state" hidden>No listings match your search. Try another crop or location.</p>
+    </section>
+
+    <section class="section add-section" id="addListing">
+      <div class="add-copy"><span class="eyebrow">SELL DIRECTLY</span><h2>Bring your harvest to market.</h2><p>Add a listing in a few simple steps. Your produce will appear in the marketplace immediately in this browser.</p><div class="trust-line"><span>✓</span> Clear price comparison <span>✓</span> No platform commission in the concept</div></div>
+      <form id="listingForm" class="listing-form">
+        <h3>List your produce</h3><p class="form-subtitle">Fields marked * are required.</p>
+        <div class="form-grid">
+          <label>Crop name *<select id="cropName" required><option value="">Choose crop</option><option>Arecanut</option><option>Coconut</option><option>Paddy</option><option>Cashew</option><option>Pepper</option></select></label>
+          <label>Location *<select id="location" required><option value="">Choose location</option><option>Udupi</option><option>DK</option><option>Karkala</option><option>Kundapura</option></select></label>
+          <label>Quantity *<input id="quantity" type="number" min="1" placeholder="e.g. 5" required></label>
+          <label>Unit *<select id="unit" required><option>quintals</option><option>kg</option><option>pieces</option></select></label>
+          <label class="full-width">Asking price (₹ per unit) *<input id="askPrice" type="number" min="1" placeholder="e.g. 46000" required></label>
+        </div>
+        <button class="primary-btn full-button" type="submit">Publish listing <span>↗</span></button>
+        <p id="formMessage" class="form-message" role="status"></p>
+      </form>
+    </section>
+
+    <section class="section how-section" id="how">
+      <div class="section-heading"><div><span class="eyebrow">SIMPLE BY DESIGN</span><h2>From harvest to handshake</h2></div></div>
+      <div class="steps-grid"><article><span>01</span><h3>List</h3><p>Farmers share crop, quantity, location and asking price.</p></article><article><span>02</span><h3>Compare</h3><p>The Fair Price Index compares the asking price with a reference price.</p></article><article><span>03</span><h3>Connect</h3><p>Buyers discover produce and submit an offer to the farmer.</p></article><article><span>04</span><h3>Agree</h3><p>Farmer reviews the offer and can accept or reject it in this prototype.</p></article></div>
+    </section>
+  </main>
+  <footer><a class="brand footer-brand" href="#"><span class="brand-icon">🌾</span><span>KrishiSetu<small>TRANSPARENT PRICES. DIRECT BUYERS.</small></span></a><p>Hackathon MVP · MITE · Team KrishiSetu</p><small>Prototype only: sample prices and browser-local data. No live market feed or real transactions.</small></footer>
+  <div id="toast" class="toast" role="status"></div>
+  <script src="script.js"></script>
+</body>
+</html>

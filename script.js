@@ -38,3 +38,24 @@ document.getElementById("listingForm").addEventListener("submit",e=>{
 ["searchInput","cropFilter","locationFilter"].forEach(id=>document.getElementById(id).addEventListener(id==="searchInput"?"input":"change",render));
 document.getElementById("langBtn").addEventListener("click",()=>toast("Kannada interface is planned; this prototype is currently in English."));
 render();
+
+
+// Judge Edition: interactive Fair Price Index calculator.
+(function(){
+  const refs={Arecanut:46200,Coconut:38,Paddy:2500,Cashew:7800,Pepper:60000};
+  const crop=document.getElementById("judgeCrop"), ask=document.getElementById("judgeAsk"), ref=document.getElementById("judgeReference");
+  if(!crop||!ask||!ref)return;
+  function update(){
+    const a=Number(ask.value),r=Number(ref.value),fpi=document.getElementById("judgeFpi"),badge=document.getElementById("judgeBadge"),explain=document.getElementById("judgeExplanation"),meter=document.getElementById("judgeMeter");
+    if(a<=0||r<=0){fpi.textContent="—";explain.textContent="Enter positive values for both prices.";badge.textContent="CHECK VALUES";return}
+    const v=a/r,d=(v-1)*100;
+    fpi.textContent=v.toFixed(3);
+    let label,cls;
+    if(v<.9){label="BELOW MARKET";cls="below"}else if(v>1.1){label="ABOVE MARKET";cls="above"}else{label="FAIR PRICE";cls="fair"}
+    badge.className="pill "+cls;badge.textContent=label;
+    explain.textContent="The asking price is "+Math.abs(d).toFixed(2)+"% "+(d<0?"below":d>0?"above":"equal to")+" the reference price.";
+    meter.style.left=Math.max(2,Math.min(98,v/1.5*100))+"%";
+  }
+  crop.addEventListener("change",()=>{ref.value=refs[crop.value];update()});
+  ask.addEventListener("input",update);ref.addEventListener("input",update);update();
+})();

@@ -4,3 +4,36 @@
 @media(max-width:900px){.topbar{padding:0 4%;}.topbar nav{gap:14px}.hero{padding:48px 5%;gap:25px}.section{padding:48px 5%}.stats-grid{grid-template-columns:repeat(2,1fr)}.listing-grid{grid-template-columns:repeat(2,1fr)}.add-section{gap:25px}.hero-visual{height:330px}}
 @media(max-width:620px){.topbar{height:auto;min-height:74px;flex-wrap:wrap;padding:14px 5%}.topbar nav{order:3;width:100%;justify-content:space-between;font-size:11px;padding-top:8px}.brand{font-size:17px}.brand-icon{font-size:24px}.outline-btn{font-size:10px;padding:8px}.hero{grid-template-columns:1fr;padding:40px 5%}.hero h1{font-size:51px}.hero-visual{height:300px}.hero-stats{gap:18px}.hero-stats strong{font-size:20px}.section-heading{align-items:flex-start;flex-direction:column}.section-heading h2,.add-copy h2{font-size:27px}.stats-grid,.listing-grid,.steps-grid{grid-template-columns:1fr 1fr}.stat-card{padding:15px;min-height:150px}.market-tools{flex-wrap:wrap}.search-box{flex-basis:100%}.market-tools select{flex:1;min-width:0}.add-section{grid-template-columns:1fr}.listing-form{padding:19px}.form-grid{gap:12px}.buyer-card{right:10px;bottom:20px}.price-card{left:15px;top:35px}.steps-grid article{padding-right:8px}footer{padding:25px 5%}}
 @media(max-width:390px){.listing-grid,.stats-grid{grid-template-columns:1fr}.hero-actions{align-items:flex-start;flex-direction:column;gap:15px}.form-grid{grid-template-columns:1fr}.full-width{grid-column:auto}}
+
+
+/* Judge-facing FPI lab and transparent roadmap */
+.judge-lab{background:#edf2e7}
+.judge-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.judge-equation{font:800 22px Manrope,sans-serif;color:#194b35;margin:12px 0 20px}
+.judge-equation span{display:inline-block;background:#fff;border:1px solid #dfe7d8;border-radius:7px;padding:7px 10px;font-size:15px}
+.judge-explainer>p{font-size:13px;line-height:1.8;color:#69776d;max-width:450px}
+.judge-bands{display:grid;gap:13px;margin-top:24px}
+.judge-bands>div{display:flex;align-items:center;gap:10px}
+.judge-bands i{width:10px;height:10px;border-radius:50%;display:block}
+.band-low{background:#d6a24f}.band-fair{background:#75a75d}.band-high{background:#c87965}
+.judge-bands b,.judge-bands small{display:block}.judge-bands b{font-size:11px}.judge-bands small{font-size:10px;color:#778577;margin-top:3px}
+.judge-calculator{padding:25px;background:#fff;border:1px solid #dfe7d8;border-radius:14px;box-shadow:0 14px 35px #1b3f2010}
+.judge-calculator label{display:flex;flex-direction:column;gap:8px;font-size:11px;font-weight:700;color:#526253}
+.judge-calculator input,.judge-calculator select{width:100%;border:1px solid #dfe5db;border-radius:8px;background:#fcfcf9;padding:12px;font-size:12px;color:#435745;outline-color:#8bad73}
+.judge-inputs{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:15px}
+.judge-result{display:flex;align-items:center;justify-content:space-between;margin:20px 0 13px;padding-top:16px;border-top:1px solid #edf0e9}
+.judge-result small{display:block;font-size:8px;letter-spacing:1px;color:#879287;margin-bottom:5px}
+.judge-result strong{font:800 30px Manrope,sans-serif;color:#194b35}
+.judge-meter{height:7px;background:linear-gradient(to right,#f0d59e 0 33%,#d4e8bc 33% 67%,#edc5b9 67%);border-radius:20px;position:relative}
+.judge-meter span{position:absolute;top:-4px;left:50%;height:15px;width:3px;background:#1c412e;border-radius:2px;transition:left .2s}
+#judgeExplanation{font-size:11px;line-height:1.7;color:#627363;margin:13px 0}
+.judge-disclaimer{font-size:9px;line-height:1.6;color:#929b90}
+.judge-roadmap{background:#fff}
+.roadmap-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+.roadmap-grid article{background:#fbfcf8;border:1px solid #e1e7dc;border-radius:12px;padding:22px}
+.roadmap-number{display:block;font:800 12px Manrope,sans-serif;color:#829b73;margin-bottom:17px}
+.roadmap-state{display:inline-block;font-size:8px;letter-spacing:.8px;font-weight:800;border-radius:5px;padding:6px 7px}
+.state-done{background:#e5f2d8;color:#456c38}.state-next{background:#e9eef8;color:#4d6590}.state-future{background:#f9edda;color:#946a2e}
+.roadmap-grid h3{font-size:16px;margin:14px 0 8px}.roadmap-grid p{font-size:11px;line-height:1.8;color:#69776d;margin:0}
+.judge-honesty{font-size:10px;line-height:1.7;color:#69776d;background:#f3f5ef;border-left:3px solid #8cae70;padding:12px 15px;margin:18px 0 0}
+@media(max-width:700px){.judge-grid{grid-template-columns:1fr;gap:25px}.roadmap-grid{grid-template-columns:1fr}.judge-inputs{grid-template-columns:1fr}}

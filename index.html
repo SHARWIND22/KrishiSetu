@@ -68,6 +68,40 @@
       <div class="steps-grid"><article><span>01</span><h3>List</h3><p>Farmers share crop, quantity, location and asking price.</p></article><article><span>02</span><h3>Compare</h3><p>The Fair Price Index compares the asking price with a reference price.</p></article><article><span>03</span><h3>Connect</h3><p>Buyers discover produce and submit an offer to the farmer.</p></article><article><span>04</span><h3>Agree</h3><p>Farmer reviews the offer and can accept or reject it in this prototype.</p></article></div>
     </section>
   </main>
+
+    <section class="section judge-lab" id="price-lab">
+      <div class="section-heading"><div><span class="eyebrow">PRICE INTELLIGENCE</span><h2>Let the numbers speak.</h2><p>Change the asking price and see the Fair Price Index update instantly.</p></div><span class="demo-tag">INTERACTIVE FPI LAB</span></div>
+      <div class="judge-grid">
+        <div class="judge-explainer">
+          <div class="judge-equation">FPI = <span>Asking price</span> ÷ <span>Reference price</span></div>
+          <p>The Fair Price Index is a comparison aid, not a guaranteed sale price. A real deployment should use a dated, local, commodity-matched market reference.</p>
+          <div class="judge-bands"><div><i class="band-low"></i><span><b>Below market</b><small>FPI &lt; 0.90</small></span></div><div><i class="band-fair"></i><span><b>Fair range</b><small>0.90–1.10</small></span></div><div><i class="band-high"></i><span><b>Above market</b><small>FPI &gt; 1.10</small></span></div></div>
+        </div>
+        <div class="judge-calculator">
+          <label>Crop
+            <select id="judgeCrop"><option value="Arecanut">Arecanut</option><option value="Coconut">Coconut</option><option value="Paddy">Paddy</option><option value="Cashew">Cashew</option><option value="Pepper">Pepper</option></select>
+          </label>
+          <div class="judge-inputs">
+            <label>Farmer asking price (₹)<input id="judgeAsk" type="number" min="1" value="46000"></label>
+            <label>Reference price (₹)<input id="judgeReference" type="number" min="1" value="46200"></label>
+          </div>
+          <div class="judge-result"><div><small>FAIR PRICE INDEX</small><strong id="judgeFpi">0.996</strong></div><span class="pill fair" id="judgeBadge">FAIR PRICE</span></div>
+          <div class="judge-meter"><span id="judgeMeter"></span></div>
+          <p id="judgeExplanation">The asking price is 0.43% below the reference price.</p>
+          <small class="judge-disclaimer">Demonstration values only — not live Agmarknet data.</small>
+        </div>
+      </div>
+    </section>
+    <section class="section judge-roadmap" id="impact">
+      <div class="section-heading"><div><span class="eyebrow">TRANSPARENT BY DESIGN</span><h2>Prototype today. Pilot next.</h2><p>We distinguish implemented features from proposed production capabilities.</p></div></div>
+      <div class="roadmap-grid">
+        <article><span class="roadmap-number">01</span><small class="roadmap-state state-done">WORKING IN THIS DEMO</small><h3>Marketplace MVP</h3><p>Listings, crop/location search, FPI badges, and browser-local offer interactions.</p></article>
+        <article><span class="roadmap-number">02</span><small class="roadmap-state state-next">NEXT BUILD</small><h3>Shared farmer-buyer platform</h3><p>Backend API, database, real accounts, OTP verification, and cross-device listings.</p></article>
+        <article><span class="roadmap-number">03</span><small class="roadmap-state state-future">FIELD PILOT</small><h3>Trusted local price data</h3><p>Source-dated mandi prices, Kannada usability testing, and farmer-group feedback.</p></article>
+      </div>
+      <p class="judge-honesty">Honesty note: the current MVP does not use live mandi data, authenticate users, or share listings between devices. All reference prices are illustrative.</p>
+    </section>
+
   <footer><a class="brand footer-brand" href="#"><span class="brand-icon">🌾</span><span>KrishiSetu<small>TRANSPARENT PRICES. DIRECT BUYERS.</small></span></a><p>Hackathon MVP · MITE · Team KrishiSetu</p><small>Prototype only: sample prices and browser-local data. No live market feed or real transactions.</small></footer>
   <div id="toast" class="toast" role="status"></div>
   <script src="script.js"></script>
